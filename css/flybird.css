@@ -1,0 +1,160 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+main {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes skyMove {}
+
+#bird {
+    position: absolute;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    background: url(../images/bird.png) no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: changeBird 0.3s infinite steps(3) alternate;
+}
+
+@keyframes changeBird {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
+}
+
+#bird>div {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+
+#window {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+#window>.fractionalNum {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    font-size: 4vh;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10vh;
+    display: none;
+}
+
+#window>ol {
+    position: absolute;
+    background: url(../images/sky.png) repeat-x;
+    background-size: auto 100%;
+}
+
+#window>ol>li {
+    width: 25%;
+    height: 100%;
+    list-style: none;
+    float: left;
+    background-size: auto 100%;
+}
+
+#window>div {
+    position: absolute;
+    width: 52px;
+    height: 420px;
+}
+
+#window>div.down {
+    background: url(../images/pipe-down.png) no-repeat;
+    top: 0px;
+}
+
+#window>div.up {
+    background: url(../images/pipe-up.png) no-repeat;
+    bottom: 0px;
+}
+
+#overGame {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#overGame>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overGame>div>.start {
+    display: inline-block;
+    margin-top: 20vh;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    animation: changeTxt 0.3s ease-in-out 0s infinite alternate;
+}
+
+@keyframes changeTxt {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.5);
+        color: #55aaff;
+    }
+}
+
+#overGame>div>.over {
+    text-align: center;
+    display: none;
+    color: #ffff00;
+}
+
+#overGame>div>.over>p {
+    margin: 8vw;
+    color: #55AAFF;
+}
+
+#overGame>div>.over>.againGame {
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff0000;
+    font-weight: bold;
+
+}
