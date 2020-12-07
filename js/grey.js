@@ -3,7 +3,6 @@ var bugTF = false; //定义是否开始穿墙外挂
 var speed = 150; //定义开始游戏的速度100像素每秒
 var allGap = 150; //定义游戏开始创建管道的上下间距
 var changeGap = true; //定义是否改变管道上下间距
-var allGap = 150; //定义全局初始默认上下管道间距
 var minGap = 100; //定义最小的管道间距
 //定义开始开始加载的方法
 $(function () {
